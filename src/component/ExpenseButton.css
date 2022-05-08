@@ -1,0 +1,18 @@
+.expenseButton{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 14px;
+}
+
+.button{
+    background-color: rgb(129, 126, 126);
+    border-radius: 10px;
+    width: 5rem;
+    height: 3.3rem;
+    margin: 3px;
+}
+

@@ -1,0 +1,7 @@
+.container{
+    background-color: grey;
+    width: 450px;
+    height: 200px;
+    position: absolute; bottom:0;
+    border-radius: 10px;
+}
