@@ -8,11 +8,13 @@ const Input = (props) => {
 
     const inputHandler = (event) => {
         setExpenseInput(event.target.value)
+        const cost = event.target.value
+        props.onSaveCost(cost)
     }
 
     return(
         <div className="input-container">
-           <input className="interface-input" onChange={this.props.CostHandler}></input>
+           <input className="interface-input" onChange={inputHandler}></input>
         </div>
     );
 }

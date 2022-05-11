@@ -2,8 +2,8 @@ import React from "react";
 import Input from "./Input";
 
 const Building = props => {
-    const big = require('/Users/gary/city/city/src/img/big.jpg')
-    const small = require('/Users/gary/city/city/src/img/small.jpg')
+    const big = require('/home/gary/CityAccount/src/img/big.jpg')
+    const small = require('/home/gary/CityAccount/src/img/small.jpg')
     
     if (Input.expenseInput>=500){
     return(

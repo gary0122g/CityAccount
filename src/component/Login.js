@@ -1,27 +1,37 @@
 import React, { useState } from "react";
 import './Login.css'
+import axios from "axios";
 
 function Login(props){
-    const [isLogin,SetIsLogin] = useState(false);
     const [enterAccount,SetAccount] = useState('');
     const [enterPassword,SetPassword] = useState('');
+    const [ifLogin, SetIfLogin] = useState(false);
 
     const enterAccountHandler = (event) => {
         SetAccount(event.target.value)
     }
 
-    const enterPasswordHandler = (event) =>{
+    const enterPasswordHandler = (event) => {
         SetPassword(event.target.value)
     }
 
-    const submitHandler = (event) =>{
-        if (enterAccount==='gary' && enterPassword===123){
-            SetIsLogin(true)
-            console.log(isLogin)
-        } else{
-            console.log(false)
-        }
+    const submitLoginHandler = (event) => {
+       axios.post("http://localhost:3000/login",{
+           account : enterAccount,
+           password : enterPassword
+       }).then((response)=>{
+           console.log(response)
+           if(response.data==='Success'){
+               SetIfLogin(true)
+               props.loginSuccessfully(ifLogin)
+           }
+       }).catch(function(error){
+           console.log(error)
+       })
+
     }
+
+
 
     return  ( 
         <div className="loginContainer">
@@ -31,7 +41,10 @@ function Login(props){
                 <input onChange={enterAccountHandler} className="loginInput" type="text"></input>
                 <p className="p">密碼</p>
                 <input onChange={enterPasswordHandler} className="loginInput" type="text"></input>
-                <button onClick={submitHandler} type="submit" className="login-button">Login</button>
+                <div>
+                    <button onClick={submitLoginHandler} type="submit" className="login-button">登入</button>
+                </div>
+                
             </div>    
         </div>
     );

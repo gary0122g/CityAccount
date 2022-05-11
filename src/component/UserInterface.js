@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Building from "./Building";
 import ExpenseButton from "./ExpenseButton";
 import Input from "./Input";
 import './UserInterface.css'
@@ -13,8 +12,8 @@ const InterFaces = props =>{
     
     return (
         <div className="container">
-            <Input cost={}></Input>
-            <ExpenseButton/>
+            <Input onSaveCost={CostHandler}></Input>
+            <ExpenseButton></ExpenseButton>
         </div>
     );
 }

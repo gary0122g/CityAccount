@@ -1,8 +1,9 @@
 import React from "react";
 import './ExpenseButton.css'
 import Input from "./Input";
-const ExpenseButton = props =>{
 
+const ExpenseButton = props =>{
+    
     
     return(
         <div className="button-container">
